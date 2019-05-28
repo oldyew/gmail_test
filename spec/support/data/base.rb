@@ -4,7 +4,6 @@ require 'data_magic/standard_translation'
 module GmailTest
   module Data
     class Base < WatirModel
-
     end
 
     class Defaults

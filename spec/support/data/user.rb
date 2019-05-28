@@ -2,11 +2,8 @@ module GmailTest
   module Data
     class User < Base
 
-      # Specify default data for each key inside block
-
-      key(:email) {  }
-        key(:password) { Defaults.translate :password }
-
+      key(:email) { 'oldyew@gmail.com' }
+      key(:password) { 'GoldenDragon@1' }
     end
   end
 end

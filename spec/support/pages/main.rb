@@ -1,14 +1,12 @@
 module GmailTest
   class Main < Page::Base
+    element(:titles) { |text| browser.h3(text: /#{text}/) }
 
-    # Define url represented by page object if appropriate
-    # page_url {  }
-
-
-    # Define elements representing contents of page
-    # Specify full Watir locator inside block
-    # element(:foo) { browser.div(id: 'foo') }
-
-
+    def title?(text)
+      titles(text).wait_until(&:present?)
+      true
+    rescue Watir::Wait::TimeoutError
+      false
+    end
   end
 end
