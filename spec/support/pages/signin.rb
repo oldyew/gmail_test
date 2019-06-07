@@ -8,7 +8,6 @@ module GmailTest
 
     def authenticate(data)
       fill_form(data)
-      next.click
     end
   end
 end
