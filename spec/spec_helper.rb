@@ -20,7 +20,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     @browser = if ENV['USE_DOCKER'] == 'true'
-                 url = 'http://' + hub + ':4444/wd/hub'
+                 url = 'http://' + HUB_HOST + ':4444/wd/hub'
                  Watir::Browser.new :chrome, timeout: 120, url: url
                else
                  Watir::Browser.new :chrome
