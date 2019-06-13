@@ -3,11 +3,19 @@ module GmailTest
     page_url { 'https://gmail.com' }
 
     element(:email) { browser.text_field(id: 'identifierId') }
-    element(:password) { browser.text_field(class: 'whsOnd zHQkBf') }
-    element(:next) { browser.button(id: 'identifierNext') }
+    element(:password) { browser.text_field(class: ['whsOnd zHQkBf']) }
+    element(:submit) { browser.element(class: ["CwaK9"]) }
 
-    def authenticate(data)
-      fill_form(data)
+    def email_submit(data)
+      email.set(data.email)
+      submit.click
+      sleep 3
+    end
+
+    def password_submit(data)
+      password.set(data.password)
+      submit.click
+      sleep 10
     end
   end
 end

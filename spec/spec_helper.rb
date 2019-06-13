@@ -25,11 +25,12 @@ RSpec.configure do |config|
                else
                  Watir::Browser.new :chrome
                end
+    @browser.window.maximize
     Base.browser = @browser
-    Site.base_url = ENV['BASE_URL']
+    # Site.base_url = ENV['BASE_URL']
   end
 
-  config.after(:each) do
-    @browser.quit
-  end
+  # config.after(:suite) do
+  #   @browser.close
+  # end
 end
